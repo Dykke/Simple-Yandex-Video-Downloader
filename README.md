@@ -8,6 +8,7 @@ A Python script for downloading videos from Yandex Disk by extracting and combin
 - FFmpeg (the script is configured to look for FFmpeg at `C:\Users\<Your Name>\Downloads\ffmpeg-2025-07-17-git-bc8d06d541-full_build\bin\ffmpeg`)
 - Python packages:
   - `requests`
+  - `tkinter` (included with Python, required for GUI version)
 
 ## Setup
 
@@ -20,10 +21,27 @@ pip install requests
 
 ## How to Use
 
+### Command Line Version
+
 1. Run the script:
 ```
 py SimpleYandexDownloader.py
 ```
+
+### GUI Version
+
+1. Run the GUI version:
+```
+py SimpleYandexDownloaderGUI.py
+```
+
+### Executable Version
+
+1. Build the executable (Windows, macOS, Linux):
+```
+py build_exe.py
+```
+2. Run the generated executable from the `dist` folder
 
 2. Follow the on-screen instructions:
    - Open your browser's Network tab (F12)
