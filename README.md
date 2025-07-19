@@ -4,7 +4,7 @@ A Python script for downloading videos from Yandex Disk by extracting and combin
 
 ## Author
 
-Created by Veesa
+Created by Dykke
 
 [![GitHub](https://img.shields.io/github/license/Dykke/Simple-Yandex-Video-Downloader)](https://github.com/Dykke/Simple-Yandex-Video-Downloader/blob/main/LICENSE)
 
