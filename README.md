@@ -2,6 +2,12 @@
 
 A Python script for downloading videos from Yandex Disk by extracting and combining video segments.
 
+## Author
+
+Created by Veesa
+
+[![GitHub](https://img.shields.io/github/license/Dykke/Simple-Yandex-Video-Downloader)](https://github.com/Dykke/Simple-Yandex-Video-Downloader/blob/main/LICENSE)
+
 ## Requirements
 
 - Python 3.6 or higher
@@ -43,6 +49,8 @@ py build_exe.py
 ```
 2. Run the generated executable from the `dist` folder
 
+**Note:** When using the executable version, you may see a command prompt window briefly appear during the download process or when combining files. This is normal and happens when FFmpeg is being called to combine the video segments. The window will close automatically when the process is complete.
+
 2. Follow the on-screen instructions:
    - Open your browser's Network tab (F12)
    - Find/Filter a .ts segment URL (like 0.ts?vid=...)
@@ -67,4 +75,8 @@ py build_exe.py
 
 - The script requires a direct .ts segment URL, which you can find using your browser's developer tools
 - Downloaded videos are saved to your default Downloads folder
-- You can cancel the download at any time by pressing Ctrl+C 
+- You can cancel the download at any time by pressing Ctrl+C
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 

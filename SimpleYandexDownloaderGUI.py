@@ -75,6 +75,10 @@ class YandexDownloaderGUI:
         self.root.geometry("800x600")
         self.root.minsize(600, 500)
         
+        # Version and copyright info
+        self.version = "1.0.0"
+        self.copyright = "© 2025 Dykke"
+        
         # Set theme
         style = ttk.Style()
         try:
@@ -137,6 +141,14 @@ class YandexDownloaderGUI:
         self.log_text = scrolledtext.ScrolledText(log_frame, wrap=tk.WORD, height=10)
         self.log_text.pack(padx=5, pady=5, fill=tk.BOTH, expand=True)
         self.log_text.configure(state="disabled")
+        
+        # Credits footer
+        footer_frame = ttk.Frame(root)
+        footer_frame.pack(padx=10, pady=5, fill=tk.X)
+        
+        credit_text = f"Simple Yandex Video Downloader v{self.version} | {self.copyright} | MIT License"
+        credit_label = ttk.Label(footer_frame, text=credit_text, foreground="gray")
+        credit_label.pack(side=tk.RIGHT, padx=5, pady=2)
         
         # Initialize variables
         self.download_thread = None
