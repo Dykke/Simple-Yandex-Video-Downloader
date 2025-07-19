@@ -114,7 +114,7 @@ def detect_segment_count(base_url, session, max_limit=None):
         'Referer': 'https://disk.yandex.com/'  # Important for Yandex
     }
     
-    # Spinner animation
+    # Spinner animation - use simpler characters that work better in GUI
     spinner = itertools.cycle(['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'])
     found_segments = 0
     
@@ -124,7 +124,8 @@ def detect_segment_count(base_url, session, max_limit=None):
         print(f"\r{next(spinner)} 🔍 Verifying first segment...", end="", flush=True)
         response = session.get(segment_url, headers=headers, timeout=10, stream=True)
         if response.status_code != 200:
-            print(f"\r{' ' * 80}\r❌ First segment not found! URL may be invalid.")
+            print(f"\r{' ' * 80}")
+            print("❌ First segment not found! URL may be invalid.")
             return 0
         
         # Read a small part to verify it's a valid segment
@@ -133,7 +134,8 @@ def detect_segment_count(base_url, session, max_limit=None):
                 break
             
     except Exception as e:
-        print(f"\r{' ' * 80}\r❌ Error accessing first segment: {str(e)}")
+        print(f"\r{' ' * 80}")
+        print(f"❌ Error accessing first segment: {str(e)}")
         return 0
     
     # Start with a very conservative approach - check each segment one by one
@@ -173,7 +175,9 @@ def detect_segment_count(base_url, session, max_limit=None):
             # Error means we've likely reached the end
             break
     
-    print(f"\r{' ' * 80}\r")
+    # Clear the spinner line and print a newline for cleaner output
+    print(f"\r{' ' * 80}")
+    print(f"✅ Found {found_segments} segments available")
     return found_segments
 
 def download_segment_with_retry(args):
