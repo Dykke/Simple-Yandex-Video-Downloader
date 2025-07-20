@@ -138,9 +138,9 @@ def detect_segment_count(base_url, session, max_limit=None):
         print(f"❌ Error accessing first segment: {str(e)}")
         return 0
     
-    # Start with a very conservative approach - check each segment one by one
-    # Only go up to 30 max for initial detection (most videos have fewer segments)
-    max_to_check = 30 if max_limit is None or max_limit > 30 else max_limit
+    # Default to 200 segments if max_limit is not specified
+    # This allows for checking many more segments by default
+    max_to_check = 200 if max_limit is None else max_limit
     
     # Check segments sequentially
     for i in range(max_to_check):

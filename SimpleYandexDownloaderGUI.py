@@ -329,8 +329,8 @@ class YandexDownloaderGUI:
                     print(f"\n❌ Error accessing first segment: {str(e)}")
                     return 0
                 
-                # Start with a conservative approach
-                max_to_check = 30 if max_limit is None or max_limit > 30 else max_limit
+                # Use a higher limit to detect more segments
+                max_to_check = 200 if max_limit is None else max_limit
                 
                 # Initialize progress tracking
                 print("\nScanning for available segments:")
